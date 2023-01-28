@@ -14,53 +14,79 @@ body {
 }
 
 footer {
-    text-align: left;
     font-size: 10px;
 }
 
-.display-mod {
-    background-color: grey;
-    border: #1f1f1f;
+*::selection {
+    color: brown;
+}
+
+.calculator {
+    /* glass effect */
+    backdrop-filter: blur(.5px);
+    border: whitesmoke;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 4%;
 }
 
-.output {
-    border: solid rgb(255, 255, 255) 2px;
+.display {
+    border-radius: 2.5px;
     background-color: whitesmoke;
     color: black;
+    text-align: right;
     
-    grid-column: 1/ -1;
+    /* grid-column: 1/ -1;
     align-items: flex-end;
     justify-content: space-around;
-    flex-direction: column;
+    flex-direction: column; */
+    position: relative;
 
+    width: 287px;
     padding: 10px;
-    margin-bottom: 20px;
-    height: 50px;
+    margin: 15px 15px 0 15px;
+    border: solid white 2px;
 
     word-wrap: break-word;
     word-break: break-all;
 }
 
+*::-webkit-scrollbar{
+    width: 2%;
+}
+
+.display-exp{
+    opacity: .4;
+    font-size: 20px;
+    overflow: auto;
+    height: 24px;
+}
+
+.display-result {
+    height: 36.8px;
+    overflow:auto;
+}
+
 .grid-container {
+    margin: 10px;
     display: inline-grid;
     grid-template-columns: repeat(4, auto);
-    grid-template-rows: repeat(5, 80px);
-    margin: -0.5%;
+    grid-template-rows: repeat(5, 70px);
+    
+    /* display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(8rem, 1fr));
+    grid-auto-rows: 6rem; */
 }
 
 button
 {
     background-color: rgba(163, 229, 245, 0.93);
-    border: solid white 1px;
-    border-radius: 2%;
-    font-size: 15px;
-    margin: 2%;
-    box-shadow: inset;
+    border: 1px;
+    border-radius: 5px;
+    font-size: 18px;
+    box-shadow:#1f1f1f;
+    margin: 5px;
 
     display: flex;
     justify-content: center;
@@ -68,7 +94,20 @@ button
     flex-flow: wrap;
 }
 
+.op {
+    background-color: rgba(11, 77, 93, 0.83);
+    color: white;
+    border: none;
+}
+
+.equal {
+    grid-column: -1/3;
+}
+
+.ac {
+    grid-column: 1/3;
+}
+
 button:hover {
     background-color: rgb(177, 234, 248);
-    cursor: grab;
 }
